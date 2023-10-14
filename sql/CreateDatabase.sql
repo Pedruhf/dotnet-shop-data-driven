@@ -1,0 +1,1 @@
+CREATE TABLE [dotnet_data_drive];

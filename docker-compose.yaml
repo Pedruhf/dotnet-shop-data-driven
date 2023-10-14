@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: dotnet-shop-data-driven
+    environment:
+      SA_PASSWORD: "dotnet_shop_123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - 1433:1433
+    volumes:
+      - ./docker/sqlserver/data:/var/opt/mssql/data
+      - ./docker/sqlserver/log:/var/opt/mssql/log
+      - ./docker/sqlserver/secrets:/var/opt/mssql/secrets
